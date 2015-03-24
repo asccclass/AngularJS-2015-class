@@ -2,7 +2,7 @@
 主要用來放置2015 AngularJS 課程課前準備及課程中Lab程式碼，請參加課程的學員自行download。由於此課程包含大量的『實作』，為節省時間，請盡量先完成環境準備的動作。
 
 ## Preparation 環境準備
-* 安裝主機平台
+* 設定主機平台
   - 請先參考「<a href="http://justjii-justdrink.rhcloud.com/?p=66" target=_blank>Nitrous.io 申請及使用</a>」步驟將主機平台設定起來。至少需要完成帳號認證的步驟
 * 安裝AngularJS 函式庫
   - 請依照「<a href="http://justjii-justdrink.rhcloud.com/archives/82" target=_blank>AngularJS 函式庫安裝</a>」文章完成AngularJS函式庫的安裝
