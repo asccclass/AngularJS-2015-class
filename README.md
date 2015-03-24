@@ -1,5 +1,5 @@
 # Angularjs 2015.04 Training Course
-主要用來放置AngularJS課程 Lab程式碼，請參加課程的學員自行download。由於此課程包含大量的『實作』，為節省時間，請盡量先完成環境準備的動作。
+主要用來放置2015 AngularJS 課程課前準備及課程中Lab程式碼，請參加課程的學員自行download。由於此課程包含大量的『實作』，為節省時間，請盡量先完成環境準備的動作。
 
 ## Preparation 環境準備
 * 安裝主機平台
