@@ -12,3 +12,4 @@
   - 準備熟悉的SFTP軟體，如：<a href="http://winscp.net/eng/download.php" target=_blank>WinSCP</a>
 * 工具準備
   - <a href="http://www.sqlite.org/download.html" target=_blank>Squlite DB</a>
+  - <a href="http://fortawesome.github.io/Font-Awesome/" target=_blank>Font Awesome</a>
