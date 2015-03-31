@@ -13,6 +13,9 @@
 * 工具準備
   - <a href="http://www.sqlite.org/download.html" target=_blank>Squlite DB</a>
   - <a href="http://fortawesome.github.io/Font-Awesome/" target=_blank>Font Awesome</a>
+* CSS 套件（可擇一熟悉）
+  - <a href="http://getbootstrap.com/ target=_blank>Bootstrap</a>
+  - <a href="http://foundation.zurb.com/" target=_blank>Foundation</a>
 
 # 參考資料
 * 若對Javascript不熟悉者，可先參考：
