@@ -13,3 +13,5 @@
 * 工具準備
   - <a href="http://www.sqlite.org/download.html" target=_blank>Squlite DB</a>
   - <a href="http://fortawesome.github.io/Font-Awesome/" target=_blank>Font Awesome</a>
+* 若對Javascript不熟悉者，可先參考：
+  - <a href="https://github.com/airbnb/javascript/blob/master/README.md?utm_source=javascriptweekly&utm_medium=email" target=_blank>Airbnb JavaScript Style Guide() </a>
