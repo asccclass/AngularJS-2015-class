@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- step3. 設定作用域  -->
+<html ng-app="myApp">
+  <head>
+    <meta charset='utf-8'>
+    <title>AngularJS Class @Sinica Lab</title>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- step1. 載入AngularJS framework -->
+    <script type="text/javascript" src="libs/angularjs/angular.js"></script>
+    <script type="text/javascript" src="js/bike.js"></script>
+  </head>
+<body ng-controller="bike">
+   <div class="container">
+     
+     
+   <div class="page-hea  der">
+       <h1>{{labName}}<small> class of 2015 AngularJS @人社中心 </small></h1>
+  </div>
+  
+     <select ng-model="limitField">
+        <option value="" />
+        <option value="信義區">信義區</option>
+        <option value="南港區">南港區</option>
+        <option value="三重區">三重區</option>
+        <option value="中和區">中和區</option>
+        <option value="中山區">中山區</option>
+        <option value="中正區">中正區</option>
+        <option value="內湖區">內湖區</option>
+        <option value="北投區">北投區</option>
+        <option value="士林區">士林區</option>
+     </select>     
+     <button class="btn" ng-click="reloadData()"  ng-class="reloadFlag == 1 ? 'btn-danger' : 'btn-default'"><span class="glyphicon glyphicon-refresh"></span></button>
+  <table class="table table-hover">
+     <tr>
+       <th>序號</th>
+       <th>站點區域</th> 
+       <th>地點</th> 
+       <th>供應數</th>
+       <th>尚有單車數</th>
+       <th>空位數</th>
+       <th>地址</th>
+       <th>&nbsp;</th>
+    </tr>
+    <tr ng-repeat="list in lists.retVal | orderBy:sortField | filter:limitField"> 
+       <td>{{$index + 1}}</td>
+       <td>{{list.sna}}</td>
+       <td>{{list.sarea}}</td>
+       <td align='right'>{{list.tot}}</td>
+       <td align='right'>{{list.sbi}}</td>
+       <td align='right'>{{list.tot - list.sbi}}</td>
+       <td>{{list.ar}}</td>
+      <td>
+        <a href="" class="small buttton success" ng-click="del(list)">刪除</a>
+      </td>
+    </tr>
+  </table>
+  </div>
+  
+<div class="modal fade" id="waiting" aria-hidden="true">
+   <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+         <img src="images/waiting.gif" width="56">
+         執行中，請稍後......
+      </div>
+   </div>
+</div>
+  
+  
+</body>
+</html>
