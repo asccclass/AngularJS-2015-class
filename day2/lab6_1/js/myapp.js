@@ -18,6 +18,18 @@ angular.module('myApp', [])
      })
    .error(function(data){ console.log(data) });
   
+    $scope.delPsn = function(list) {
+        var idx = $scope.lists.indexOf(list);
+        if(idx >= 0) {
+          $http({url:"server/save.php", "method":"POST", params:list })
+            .success(function(waterData) {
+               $scope.lists.splice(idx, 1);
+               console.log(waterData);
+           })
+            .error(function(data){ console.log(data) });
+        }
+    };
+
    $scope.addPsn = function(person)  {
      $scope.lists.push(person);
      $scope.person = {};
