@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- step3. 設定作用域  -->
+<html ng-app="myApp">
+  <head>
+    <meta charset='utf-8'>
+    <title>AngularJS Class @Sinica Lab</title>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css/foundation/css/normalize.css" media="screen">
+    <link rel="stylesheet" href="css/foundation/css/foundation.min.css" media="screen">
+    <!-- step1. 載入AngularJS framework -->
+    <script type="text/javascript" src="libs/angularjs/angular.js"></script>
+    <script type="text/javascript" src="js/myapp.js"></script>
+  </head>
+<body ng-controller="helloWorld">
+   <div class="row">
+    <div class="columns">
+       <h1>{{labName}}<small> class of 2015 AngularJS @人社中心 </small></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="columns large-4">
+      <input type='text' ng-model="person.name" value="" placeholder="請輸入Name">
+    </div>
+    <div class="columns large-4">
+      <input type='text' ng-model="person.age" value="" placeholder="請輸入age">
+      <input type='text' ng-model="person.dep" value="" placeholder="請輸入dep">
+    </div>
+        <button class="btn btn-default" ng-click="addPsn(person)">新增</button>
+  </div>
+  
+     <div class="row collapse">
+        <div class="small-9 columns">
+           <input type="text" ng-model="srchTxt" placeholder="水庫名稱search">
+        </div>
+     </div>
+  
+  <table>
+     <tr>
+       <th>序號</th>
+       <th>水庫名稱</th> 
+       <th>有效容量(萬立方公尺)</th>
+       <th>每日集水區降雨量(毫米)</th>
+       <th>
+          <a href=""  ng-click="sortField='daliyInflow'; sortType=!sortType">每日進水量(萬立方公尺)</a>
+          <span ng-show="sortType" class="fa fa-sort-numeric-desc"></span>
+          <span ng-show="!sortType" class="fa fa-sort-numeric-asc"></span>
+       </th>
+       <th>每日出水量(萬立方公尺)</th>
+       <th>與昨日水位差(公尺)</th>
+       <th>即時水位(公尺)</th>
+       <th>即時有效蓄水量(萬立方公尺)</th>
+       <th>即時蓄水量百分比(%)</th>
+       <th>api 最後更新時間</th>
+       <th>&nbsp;</th>
+    </tr>
+    <tr ng-repeat="list in lists | orderBy:sortField:sortType | filter:{reservoirName:srchTxt} | limitTo:10"> 
+       <td>{{$index + 1  | engNumber}}</td>
+       <td>{{list.reservoirName}}</td>
+       <td>{{list.baseAvailable}}</td>
+       <td>{{list.daliyRainfall}}</td>
+       <td>{{list.daliyInflow}}</td>
+       <td>{{list.daliyOverflow}}</td>
+       <td>{{list.daliyDetector}}</td>
+       <td>{{list.immediateLevel}}</td>
+       <td>{{list.immediateStorage	}}</td>
+       <td>{{list.immediatePercentage}}</td>
+       <td>{{list.lastedUpdateTime}}</td>
+      <td>
+        <a class="small buttton success" ng-click="delPsn(list)">刪除</a>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
