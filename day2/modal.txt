@@ -1,0 +1,8 @@
+<div class="modal fade" id="waiting" aria-hidden="true">
+   <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+         <img src="images/waiting.gif" width="56">
+         執行中，請稍後......
+      </div>
+   </div>
+</div>
