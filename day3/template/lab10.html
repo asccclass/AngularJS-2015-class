@@ -1,0 +1,16 @@
+  <select ng-model="limitField">
+      <option value="" />
+      <option ng-repeat="a in areaData" value="{{a}}">{{a}}</option>
+  </select>     
+<table class="table">
+   <tr>
+      <td>名稱</td>
+      <td>數量</td>
+      <td>空位</td>
+    </tr>
+    <tr ng-repeat="bikeData in bikeDatas | filter:limitField">
+       <td><span>{{bikeData.sna}}</span></td>
+       <td><span>{{bikeData.sbi}}</span></td>
+       <td><span>{{ getBalence(bikeData) }}</span></td>
+    </tr>
+</table>

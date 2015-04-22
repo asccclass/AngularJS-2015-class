@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- step3. 設定作用域  -->
+<html ng-app="myApp">
+  <head>
+    <meta charset='utf-8'>
+    <title>AngularJS Class @Sinica Lab</title>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- step1. 載入AngularJS framework -->
+    <script type="text/javascript" src="libs/angularjs/angular.js"></script>
+    <script type="text/javascript" src="js/lab10.js"></script>
+  </head>
+<body>
+   <div class="container" ng-controller="mainCtrl">
+      <div>
+         <h1>{{labName}}<small> class of 2015 AngularJS @人社中心 </small></h1>
+       </div>
+       <div class="row">
+          <div class="col-md-3">
+             <div bike-widget bike-datas='lists.retVal' area-data="areas"></div>
+          </div>
+          <div class="col-md-6">
+          </div>
+          <div class="col-md-3">
+          </div>
+       </div>
+   </div>
+</body>
+</html>
