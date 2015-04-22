@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- step3. 設定作用域  -->
+<html ng-app="myApp">
+  <head>
+    <meta charset='utf-8'>
+    <title>AngularJS Class @Sinica Lab</title>
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- step1. 載入AngularJS framework -->
+    <script type="text/javascript" src="libs/angularjs/angular.js"></script>
+  <style>
+    form .ng-invalid.ng-dirty { background-color: pink; }
+    form .ng-valid.ng-dirty { background-color: lightgreen; }
+    .invld-hint { color: red; }
+    .invld-hint span { margin-right: 6px; }
+  </style>  
+  </head>
+<body>
+   <div class="container"  ng-controller="helloWorld">
+      <div>
+         <h1>{{labName}}<small> class of 2015 AngularJS @人社中心 </small></h1>
+       </div><hr>
+       <div>
+           <form class="form-horizontal" name="myForm">
+              <div class="form-group">
+                 <label class="col-sm-2 control-label">姓名</label>
+                 <div class="col-sm-5">
+                    <input type="text" name="Name" class="form-control" ng-model="psn.name" placeholder="請輸入姓名" ng-required="true">
+                 </div>
+                <div class="col-sm-5 invld-hint" ng-show="myForm.Name.$error.required && myForm.Name.$dirty">
+                  <span ng-show="myForm.Name.$error.required">姓名為必填欄位</span>
+                </div>
+              </div>
+              <div class="form-group">
+                 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                 <div class="col-sm-5">
+                    <input type="email" class="form-control" name="emailAddr" ng-model="psn.email" placeholder="Email" required>
+                 </div>
+                <div class="col-sm-5 invld-hint" ng-show="myForm.emailAddr.$invalid && myForm.emailAddr.$dirty">
+                   <span ng-show="myForm.emailAddr.$error.email">Email格式不正確</span>
+                   <span ng-show="myForm.emailAddr.$error.required">必填欄位</span>
+                </div>
+              </div>
+              <div class="form-group">
+                 <label class="col-sm-2 control-label">自訂密碼</label>
+                 <div class="col-sm-5">
+                    <input type="text" class="form-control" name="code" ng-model="psn.code" placeholder="請輸入密碼，需為0-9, A-Z, a-z 長度大於四以上" required 
+                           ng-minlength="4" ng-maxlength="12" ng-pattern="/^[0-9a-zA-Z]*$/">
+                 </div>
+                <div class="col-sm-5 invld-hint" ng-show="myForm.code.$error.pattern">需為0-9, A-Z, a-z，長度大於四</div>
+              </div>
+              <div class="form-group">
+                 <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-info" ng-disabled="myForm.$invalid">送出</button>
+                    <button type="reset  " class="btn btn-danger">重置</button>
+                 </div>
+              </div>
+           </form>
+              <div>
+                表單狀態：<pre>
+      $pristine={{myForm.$pristine}}, 
+      $dirty={{myForm.$dirty}},
+      $valid={{myForm.$valid}}, <br />
+      $error={{myForm.$error | json}}</pre>
+              </div>
+              <div>
+                表單內容：<pre>{{ psn | json}}</pre>
+              </div>
+         
+       </div>
+   </div>
+    
+  <script>
+    angular.module("myApp", [])
+    .controller("helloWorld", ['$scope', function($scope) {
+      $scope.labName = "表單驗證";
+    }]);
+  </script>
+</body>
+</html>
