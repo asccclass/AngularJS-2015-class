@@ -1,0 +1,25 @@
+     
+  <table class="table table-hover">
+     <tr>
+       <th>序號</th>
+       <th>站點區域</th> 
+       <th>地點</th> 
+       <th>供應數</th>
+       <th>尚有單車數</th>
+       <th>空位數</th>
+       <th>地址</th>
+       <th>&nbsp;</th>
+    </tr>
+    <tr ng-repeat="list in lists.retVal"> 
+       <td>{{$index + 1}}</td>
+       <td>{{list.sna}}</td>
+       <td>{{list.sarea}}</td>
+       <td align='right'>{{list.tot}}</td>
+       <td align='right'>{{list.sbi}}</td>
+       <td align='right'>{{list.tot - list.sbi}}</td>
+       <td>{{list.ar}}</td>
+      <td>
+      </td>
+    </tr>
+  </table>
+  </div>

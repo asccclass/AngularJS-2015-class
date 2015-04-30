@@ -4,11 +4,11 @@ angular.module('myApp', [
 .config(["$routeProvider", function($routeProvider) {
    $routeProvider
       .when("/", {
-         templateUrl: "ubike.html",
+         templateUrl: "template/bike.html",
          controller: 'helloWorld'
       })
       .when("/water", {
-         templateUrl: "water.html",
+         templateUrl: "template/water.html",
          controller: 'helloWorld'
       })
       .otherwise({ redirectTo: '/' }); 
@@ -35,7 +35,6 @@ angular.module('myApp', [
       $scope.areas = [];
       $http({url:"http://140.109.6.150:10080/ubike", "method":"GET"})
          .success(function(ubikeData) {
-        console.log(ubikeData);
             $scope.lists = angular.fromJson(ubikeData);  
             angular.forEach($scope.lists.retVal, function (list) {
                if($scope.areas.indexOf(list.sarea) < 0)  
