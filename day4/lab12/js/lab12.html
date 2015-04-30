@@ -8,7 +8,8 @@ angular.module('myApp', [
          controller: 'helloWorld'
       })
       .when("/pageA", {
-         template: "<div> hi, This is page A</div>",
+         template: "<div><h1>{{labName}}<small> class of 2015 AngularJS @人社中心 </small></h1>" +
+                   "</div><div> hi, This is page A</div>",
          controller: 'helloWorld'
       })
       .otherwise({ redirectTo: '/' }); 
