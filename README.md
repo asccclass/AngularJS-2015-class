@@ -21,3 +21,4 @@
 * 若對Javascript不熟悉者，可先參考：
   - <a href="https://github.com/airbnb/javascript/blob/master/README.md?utm_source=javascriptweekly&utm_medium=email" target=_blank>Airbnb JavaScript Style Guide() </a>
 * <a href="http://jsonapi.org/" target=_blank>json:api 標準</a>
+* <a href="http://github.com/johnpapa/angular-styleguide/" target=_blank>Angular-Style Guide</a>
