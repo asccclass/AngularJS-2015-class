@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset='utf-8'>
+    <title>AngularJS Class @Sinica Lab</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libs/angularjs/angular.js"></script>
+    <script type="text/javascript" src="libs/angular-ui-router.js"></script>
+    <script type="text/javascript" src="js/lab5_2.js"></script>
+  </head>
+<body>
+  <div>
+    <div ng-controller="helloWorld">
+        <span>With $q: I got cash {{getMoney}}</span>
+        <button ng-click="cash(100)">Cash $100</button>
+    </div>
+</div>
+  <script>
+   var myApp = angular.module('myApp',[]);
+myApp.controller('helloWorld', function($scope, $q, $timeout){
+  $scope.getMoney = "N/A";
+  
+    var bankCashCheck = function(cash){
+        var cashCheckJob = $q.defer();
+        var promiseCard = cashCheckJob.promise;
+        $timeout(function(){
+            alert("Yes! We got it!");
+            cashCheckJob.resolve(cash);
+        }, 1*1000);
+        return promiseCard;
+    }
+    
+    $scope.cash = function(cash){
+        bankCashCheck(100).then(function(getCash){
+            $scope.getMoney = getCash;
+        });
+    };
+    
+});
+  </script>
+</body>
+</html>
