@@ -1,0 +1,40 @@
+<!doctype html>
+<html ng-app="project">
+<head>
+	<title>Angular: Service example</title>
+	<script src="http://code.angularjs.org/angular-1.0.1.js"></script>
+	<script>
+    
+var projectModule = angular.module('project',[]);
+
+projectModule.factory('theService', function() {  
+	return {
+		thing : {
+			x : 100
+		}
+	};
+});
+
+function FirstCtrl($scope, theService) {
+	$scope.thing = theService.thing;
+	$scope.name = "First Controller";
+}
+
+function SecondCtrl($scope, theService) {	
+	$scope.someThing = theService.thing; 
+	$scope.name = "Second Controller!";
+}
+	</script>
+</head>
+<body>	
+	<div ng-controller="FirstCtrl">
+		<h2>{{name}}</h2>
+		<input ng-model="thing.x"/>    		
+	</div>
+
+	<div ng-controller="SecondCtrl">
+		<h2>{{name}}</h2>
+		<input ng-model="someThing.x"/>     		
+	</div>
+</body>
+</html>
