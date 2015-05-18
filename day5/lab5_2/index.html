@@ -10,11 +10,17 @@
     <script type="text/javascript" src="libs/angular-ui-router.js"></script>
     <script type="text/javascript" src="js/lab5_2.js"></script>
   </head>
-<body ng-controller="helloWorld">
-   <div class="container">
+<body >
+   <div class="container" ng-controller="helloWorld">
       輸入三次內容後，將您輸入的內容顯示在畫面上：<br>
       <input type='text' ng-model="msg" ng-init="test-a">
-      <button class="btn btn-primary" ng-click="addMsg(msg)">看內容</button> 
+      <button class="btn btn-primary" ng-click="addMsg(msg)">看內容</button>
+   </div>
+  
+   <div class="container" ng-controller="hiWorld">
+      輸入三次內容後，將您輸入的內容顯示在畫面上：<br>
+      <input type='text' ng-model="msg" ng-init="test-a">
+      <button class="btn btn-primary" ng-click="pushMsg(msg)">看內容</button>
    </div>
 </body>
-</html>
+</html>`
