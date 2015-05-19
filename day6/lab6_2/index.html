@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset='utf-8'>
+    <title>AngularJS Class @Sinica Lab</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libs/angularjs/angular.js"></script>
+    <script type="text/javascript" src="libs/angular-ui-router.js"></script>
+    <script type="text/javascript" src="js/lab6_2.js"></script>
+    <style>
+        .jumbotron h2 {margin-top: 0}
+        hr {margin: 50px 0 60px}
+        .well hr {margin: 30px 0 30px}
+        ul {margin-bottom: 40px}
+        .text-muted {margin-bottom: 20px}
+    </style>
+  </head>
+<body>
+   <div class="container" ng-controller="pageCtrl">
+     <paging
+         class="small"
+         page="currentPage" 
+         page-size="pageSize" 
+         total="total"
+         adjacent="{{adjacent}}"
+         dots="{{dots}}"
+         scroll-top="{{scrollTop}}" 
+         hide-if-empty="{{hideIfEmpty}}"
+         ul-class="{{ulClass}}"
+         active-class="{{activeClass}}"
+         disabled-class="{{disabledClass}}"
+         show-prev-next="{{showPrevNext}}"
+         paging-action="showPagingParams('Paging Clicked', page, pageSize, total)">
+      </paging>   
+   </div>
+  
+</body>
+</html>
